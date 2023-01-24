@@ -11,7 +11,7 @@ const MapWithSearch = () => {
 
   useEffect(() => {
     mapboxgl.accessToken =
-      "pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA";
+      "MAPBOX API KEY";
     const map = new mapboxgl.Map({
       container: mapContainer.current,
       style: "mapbox://styles/mapbox/streets-v11",
@@ -57,7 +57,7 @@ const MapWithSearch = () => {
     const searchTerm = e.target.search.value;
 
     const response = await fetch(
-      `https://api.mapbox.com/geocoding/v5/mapbox.places/${searchTerm}.json?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA`
+      `https://api.mapbox.com/geocoding/v5/mapbox.places/${searchTerm}.json?access_token=MAPBOX_API_KEY`
     );
     const data = await response.json();
     setSearchResults(data.features);
